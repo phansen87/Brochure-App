@@ -1,1 +1,262 @@
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+
+import java.util.Locale;
+
+/**
+ * Created by patrick on 4/13/2015.
+ */
+
+public class BrochurePagerAdapter extends FragmentPagerAdapter {
+
+    String[] brochureImages;
+    public String currentBarFeeder;
+
+    public BrochurePagerAdapter(FragmentManager fm, Context context) {
+        super(fm);
+
+        Resources resources = context.getResources();
+
+        brochureImages = resources.getStringArray(R.array.brochureScreen);
+
+
+
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString(BrochureFragment.imageIDKey, brochureImages[position]);
+        bundle.putInt(BrochureFragment.imageIDKey, getImageID(position));
+
+        BrochureFragment brochureFragment = new BrochureFragment();
+        brochureFragment.setArguments(bundle);
+        return brochureFragment;
+
+
+    }
+
+
+
+    private int getImageID(int position){
+        int id = 0;
+        currentBarFeeder = BrochureSwipeActivity.getCurrentBarFeeder();
+        switch (currentBarFeeder) {
+            case "Rebel 102":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.rebel_102_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.rebel_102_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.rebel_102_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.rebel_102_fourth_page;
+                        break;
+                    default:
+                        break;
+            }
+                        break;
+
+            case "Rebel V65":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.rebel_v65_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.rebel_v65_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.rebel_v65_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.rebel_v65_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Patriot":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.patriot_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.patriot_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.patriot_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.patriot_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Minuteman":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.minuteman_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.minuteman_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.minuteman_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.minuteman_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Micromag 18":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.micromag_18_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.micromag_18_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.micromag_18_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.micromag_18_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Micromag 20":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.micromag_20_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.micromag_20_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.micromag_20_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.micromag_20_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Minimag Turbo 20":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.minimag_turbo_20_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.minimag_turbo_20_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.minimag_turbo_20_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.minimag_turbo_20_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Rebel 80":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.rebel_80_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.rebel_80_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.rebel_80_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.rebel_80_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Turbo 336":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.turbo_336_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.turbo_336_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.turbo_336_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.turbo_336_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "Turbo 555":
+                switch (position) {
+                    case 0:
+                        id = R.drawable.turbo_555_first_page;
+                        break;
+                    case 1:
+                        id = R.drawable.turbo_555_second_page;
+                        break;
+                    case 2:
+                        id = R.drawable.turbo_555_third_page;
+                        break;
+                    case 3:
+                        id = R.drawable.turbo_555_fourth_page;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+                    default:
+                        break;
+        }
+
+        return id;
+
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return brochureImages[position];
+    }
+
+    @Override
+    public int getCount() {
+        return brochureImages.length;
+    }
+
+
+
+}
